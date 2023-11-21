@@ -1,18 +1,20 @@
 import {
-    TokenCriteriaSearchType,
-    TokenSearchCriteriaByUser,
-    TokenSearchCriteriaByTypeAndUser,
-    TokenSearchCriteriaSingleToken,
-} from './token-dao';
-import { TokenType, AuthTokenSecure } from '../domain/auth-token';
+  TokenCriteriaSearchType,
+  TokenSearchCriteriaByUser,
+  TokenSearchCriteriaByTypeAndUser,
+  TokenSearchCriteriaSingleToken
+} from "./token-dao";
+import { TokenType, AuthTokenSecure } from "../domain/auth-token";
 
 /**
  * Token Dao search criteria
  * @param username
  */
-export const createTokenSearchCriteriaUser = (username: string): TokenSearchCriteriaByUser => ({
-    searchType: TokenCriteriaSearchType.User,
-    username,
+export const createTokenSearchCriteriaUser = (
+  username: string
+): TokenSearchCriteriaByUser => ({
+  searchType: TokenCriteriaSearchType.User,
+  username
 });
 
 /**
@@ -20,12 +22,12 @@ export const createTokenSearchCriteriaUser = (username: string): TokenSearchCrit
  * @param username
  */
 export const createTokenSearchCriteriaByTypeAndUser = (
-    username: string,
-    tokenType: TokenType
+  username: string,
+  tokenType: TokenType
 ): TokenSearchCriteriaByTypeAndUser => ({
-    searchType: TokenCriteriaSearchType.UserTokenType,
-    username,
-    tokenType,
+  searchType: TokenCriteriaSearchType.UserTokenType,
+  username,
+  tokenType
 });
 
 /**
@@ -33,8 +35,8 @@ export const createTokenSearchCriteriaByTypeAndUser = (
  * @param username
  */
 export const createTokenSearchCriteriaSingleToken = <P>(
-    token: AuthTokenSecure<P>
+  token: AuthTokenSecure<P>
 ): TokenSearchCriteriaSingleToken<P> => ({
-    searchType: TokenCriteriaSearchType.Token,
-    token,
+  searchType: TokenCriteriaSearchType.Token,
+  token
 });

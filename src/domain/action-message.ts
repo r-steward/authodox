@@ -1,13 +1,13 @@
 export enum ActionType {
-    Verify,
-    PasswordReset,
+  Verify,
+  PasswordReset
 }
 export interface ActionMessage<P> {
-    readonly principal: P;
-    readonly actionType: ActionType;
-    readonly actionToken: string;
+  readonly principal: P;
+  readonly actionType: ActionType;
+  readonly actionToken: string;
 }
 export interface ActionMessageResponse {
-    readonly isSuccess: boolean;
-    readonly errorMessage?: string;
+  readonly isSuccess: boolean;
+  readonly errorMessage?: string;
 }

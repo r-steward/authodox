@@ -7,7 +7,7 @@
  *
  */
 export interface RequestUserMapper<P, PDTO> {
-    validateNewUser(obj: any): Promise<boolean>;
-    createNewUser(obj: any): P;
-    mapToDto(p: P): PDTO;
+  validateNewUser(obj: any): Promise<boolean>;
+  createNewUser(obj: any): P;
+  mapToDto(p: P): PDTO;
 }
